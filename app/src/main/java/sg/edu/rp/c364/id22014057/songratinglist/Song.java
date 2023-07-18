@@ -9,11 +9,11 @@ public class Song {
     private int year;
     private int star;
 
-    public Song(int id, String description, String date) {
+    public Song(int id, String description, String date, int year, int stars) {
         this.id = id;
         this.title = title;
         this.singer = singer;
-        this.year = year;
+        this.year = this.year;
         this.star = star;
     }
 
@@ -29,5 +29,20 @@ public class Song {
         return id + "\n" + title + "\n" + singer + "\n" + year + "\n" + star;
     }
 
+    public void setSong(String toString, String toString1, int parseInt, Object rating) {
+    }
+
+    public int getStars() {
+        return star;
+    }
+
+
+    public String singer() {
+        return singer;
+    }
+
+    public int id() {
+        return id;
+    }
 }
 

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnInsert, btnShowList;
     EditText etSongTitle, etSinger, etYear;
     RadioGroup rg;
-    RadioButton rb1, rb2, rb3, rb4, rb5;
+    RadioButton rd1, rd2, rd3, rd4, rd5;
     ArrayList<String> alSongs;
     ArrayList<String> songs;
 
@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         etSinger = findViewById(R.id.etSingers);
         etYear = findViewById(R.id.etYear);
         rg = findViewById(R.id.rg);
-        rb1 = findViewById(R.id.rb1);
-        rb2 = findViewById(R.id.rb2);
-        rb3 = findViewById(R.id.rb3);
-        rb4 = findViewById(R.id.rb4);
-        rb5 = findViewById(R.id.rb5);
+        rd1 = findViewById(R.id.rd1);
+        rd2 = findViewById(R.id.rd2);
+        rd3 = findViewById(R.id.rd3);
+        rd4 = findViewById(R.id.rd4);
+        rd5 = findViewById(R.id.rd5);
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -73,14 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 btnShowList.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ArrayList<String> data = db.getAllSongs();
-                        songs = db.song();
-                        db.close();
-
-                        for (int i = 0; i < data.size(); i++) {
-                            String lvTxt = songs.get(i).toString();
-                            alSongs.add(lvTxt);
-                        }
                         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                         intent.putStringArrayListExtra("songs", alSongs);
                         startActivity(intent);
@@ -93,3 +85,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
